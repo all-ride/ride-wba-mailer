@@ -1,0 +1,67 @@
+{
+    "routes": [
+        {
+            "path": "/admin/mail-types",
+            "controller": "ride\\web\\base\\controller\\MailTypeController",
+            "action": "indexAction",
+            "methods": ["GET", "POST"],
+            "id": "system.mail.types"
+        },
+        {
+            "path": "/admin/mail-types/%id%",
+            "controller": "ride\\web\\base\\controller\\MailTypeController",
+            "action": "detailAction",
+            "methods": ["GET", "POST"],
+            "id": "system.mail.types.detail"
+        },
+        {
+            "path": "/admin/mail-templates",
+            "controller": "ride\\web\\base\\controller\\MailTemplateController",
+            "action": "indexAction",
+            "methods": ["GET", "POST"],
+            "id": "system.mail.templates"
+        },
+        {
+            "path": "/admin/mail-templates/%locale%",
+            "controller": "ride\\web\\base\\controller\\MailTemplateController",
+            "action": "indexAction",
+            "methods": ["GET", "POST"],
+            "id": "system.mail.templates.locale"
+        },
+        {
+            "path": "/admin/mail-templates/%locale%/add",
+            "controller": "ride\\web\\base\\controller\\MailTemplateController",
+            "action": "addAction",
+            "methods": ["GET", "POST"],
+            "id": "system.mail.templates.add"
+        },
+        {
+            "path": "/admin/mail-templates/%locale%/add/details",
+            "controller": "ride\\web\\base\\controller\\MailTemplateController",
+            "action": "formAction",
+            "methods": ["GET", "POST"],
+            "id": "system.mail.templates.add2"
+        },
+        {
+            "path": "/admin/mail-templates/%locale%/%id%",
+            "controller": "ride\\web\\base\\controller\\MailTemplateController",
+            "action": "formAction",
+            "methods": ["GET", "POST"],
+            "id": "system.mail.templates.edit"
+        },
+        {
+            "path": "/admin/preferences/mail-templates",
+            "controller": "ride\\web\\base\\controller\\MailTemplateSelectController",
+            "action": "indexAction",
+            "methods": ["GET", "POST"],
+            "id": "system.mail.templates.select"
+        },
+        {
+            "path": "/admin/preferences/mail-templates/%locale%",
+            "controller": "ride\\web\\base\\controller\\MailTemplateSelectController",
+            "action": "indexAction",
+            "methods": ["GET", "POST"],
+            "id": "system.mail.templates.select.locale"
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "name": "ride/wba-mailer",
+    "description": "Backend for the mailer templates in a Ride web application",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Joris Vandeweerd",
+            "email": "joris@statik.be"
+        }
+    ],
+    "require": {
+        "ride/app": "^1.0.0",
+        "ride/lib-common": "^1.0.0",
+        "ride/lib-form": "^1.0.0",
+        "ride/lib-html": "^1.0.0",
+        "ride/lib-i18n": "^1.0.0",
+        "ride/lib-mail": "^1.0.0",
+        "ride/lib-mailer": "^1.0.0",
+        "ride/lib-reflection": "^1.0.0",
+        "ride/lib-validation": "^1.0.0",
+        "ride/web": "^1.0.0",
+        "ride/web-base": "^1.0.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "ride\\web\\base\\": ["src/"]
+        }
+    }
+}
