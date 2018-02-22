@@ -89,6 +89,7 @@ class MailTemplateTable extends FormTable {
         }
 
         $this->options['page'] = $this->page;
+        $this->options['limit'] = $this->pageRows;
         $this->options['offset'] = ($this->page - 1) * $this->pageRows;
     }
 

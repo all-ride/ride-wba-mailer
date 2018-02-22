@@ -38,13 +38,15 @@ class MailTemplateController extends AbstractController {
         $url = $this->getUrl('system.mail.templates.edit', array('locale' => $locale, 'id' => '%id%'));
 
         $table = new MailTemplateTable($reflectionHelper, $url, $this->mailTemplateProvider, $locale);
+        $table->setPaginationOptions(array(10, 25, 50, 100));
+        $table->setPaginationUrl($baseUrl . '?page=%page%');
         $table->addAction(
             $translator->translate('button.delete'),
             array($this, 'deleteTemplate'),
             $translator->translate('label.table.confirm.delete')
         );
 
-        $form = $this->processTable($table, $baseUrl, 99);
+        $form = $this->processTable($table, $baseUrl, 25);
         if ($this->response->willRedirect() || $this->response->getView()) {
             return;
         }
