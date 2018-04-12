@@ -296,6 +296,7 @@ class MailTemplateController extends AbstractController {
 
                 $data = $form->getData();
 
+                $mailTemplate->setLocale($locale);
                 $mailTemplate->setName($data['name']);
                 $mailTemplate->setSenderName($data['senderName']);
                 $mailTemplate->setSenderEmail($data['senderEmail']);
