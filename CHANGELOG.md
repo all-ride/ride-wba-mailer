@@ -1,5 +1,8 @@
 # ride-wba-mailer
 
+## [1.0.2] - 2023-11-10
+### Updated
+- Fixed pagination
 ## [1.0.1] - 218-04-12
 ### Updated
 - added missing translations
