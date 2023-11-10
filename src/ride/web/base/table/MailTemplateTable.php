@@ -16,6 +16,10 @@ use ride\library\reflection\ReflectionHelper;
  */
 class MailTemplateTable extends FormTable {
 
+
+    protected $model;
+    protected $locale;
+
     /**
      * Constructs a new mail type table
      * @param array $mailTypes
@@ -24,8 +28,11 @@ class MailTemplateTable extends FormTable {
         $this->reflectionHelper = $reflectionHelper;
         $this->mailTemplateProvider = $mailTemplateProvider;
         $this->options = array(
-            "locale" => $locale,
+            'locale' => $locale,
         );
+
+        $this->model = $mailTemplateProvider->model;
+        $this->locale = $locale;
 
         parent::__construct(array());
 
@@ -79,18 +86,21 @@ class MailTemplateTable extends FormTable {
             return;
         }
 
-        $mailTemplates = $this->mailTemplateProvider->getMailTemplates($this->options);
+        //$mailTemplates = $this->mailTemplateProvider->getMailTemplates($this->options);
 
-        $this->countRows = count($mailTemplates);
+
+        $this->countRows = $this->countTotalRows();
         $this->pages = ceil($this->countRows / $this->pageRows);
 
         if ($this->page > $this->pages) {
             $this->page = 1;
         }
 
+
         $this->options['page'] = $this->page;
         $this->options['limit'] = $this->pageRows;
         $this->options['offset'] = ($this->page - 1) * $this->pageRows;
+
     }
 
     /**
@@ -110,7 +120,7 @@ class MailTemplateTable extends FormTable {
      * @return integer Number of rows
      */
     protected function countTotalRows() {
-        return $this->countRows;
+        return $this->model->createQuery($this->locale)->count();
     }
 
 }
