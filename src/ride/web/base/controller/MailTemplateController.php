@@ -15,6 +15,12 @@ use ride\web\base\table\MailTemplateTable;
 
 class MailTemplateController extends AbstractController {
 
+    protected $i18n;
+
+    protected $mailTemplateProvider;
+
+    protected $locale;
+
     public function __construct(I18n $i18n, MailTemplateProvider $mailTemplateProvider) {
         $this->i18n = $i18n;
         $this->mailTemplateProvider = $mailTemplateProvider;
