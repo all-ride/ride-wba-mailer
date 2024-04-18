@@ -19,6 +19,13 @@ class MailTemplateTable extends FormTable {
 
     protected $model;
     protected $locale;
+    protected $reflectionHelper;
+    protected $mailTemplateProvider;
+    protected $options;
+    protected $values;
+    protected $countRows;
+    protected $pages;
+    protected $page;
 
     /**
      * Constructs a new mail type table
